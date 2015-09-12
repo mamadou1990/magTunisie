@@ -22,7 +22,7 @@ class MediaController extends Controller
     }
 
 
-    public function Medias()
+    public function medias()
     {
         return $this->repository->getAllMedias();
 
@@ -35,7 +35,7 @@ class MediaController extends Controller
     }
 
 
-    public function Media($id)
+    public function media($id)
     {
         return $this->repository->getMedia($id);
 

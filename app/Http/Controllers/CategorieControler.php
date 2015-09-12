@@ -17,7 +17,7 @@ class CategorieControler extends Controller
     }
 
 
-    public function Categories()
+    public function categories()
     {
         return $this->repository->getAllCategories();
     }
@@ -34,7 +34,7 @@ class CategorieControler extends Controller
 
 
 
-    public function Categorie($cat_id)
+    public function categorie($cat_id)
     {
         return $this->repository->getCategorie($cat_id);
 

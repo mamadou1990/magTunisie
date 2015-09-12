@@ -16,4 +16,8 @@ Route::get('/', function () {
 });
 
 
-Route::resource('article', 'ArticleController');
+
+
+Route::get('article', [
+    'as' => 'article', 'uses' => 'ArticleController@articles'
+]);

@@ -24,11 +24,16 @@ class ArticleController extends Controller
 
 
 
-    public function Articles()
+    public function articles()
     {
-        return $this->repository->getAllArticles();
+        //return $this->repository->getAllArticles();
+        return 'test';
     }
-
+    public function test()
+    {
+        //return $this->repository->getAllArticles();
+        return 'test';
+    }
 
 
     public function createArticle($Article)
@@ -39,7 +44,7 @@ class ArticleController extends Controller
 
 
 
-    public function Article($id)
+    public function article($id)
     {
         return $this->repository->getArticle($id);
     }
@@ -71,7 +76,6 @@ class ArticleController extends Controller
     {
        return $this->repository->getActiclesBySection($sec_id);
 
-        return $articles;
     }
 
 

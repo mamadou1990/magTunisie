@@ -18,7 +18,7 @@ class SectionController extends Controller
     }
 
 
-    public function Sections()
+    public function sections()
     {
         return  $this->repository->getAllSections();
     }
@@ -35,7 +35,7 @@ class SectionController extends Controller
 
 
 
-    public function Section($id)
+    public function section($id)
     {
        return $this->repository->getSection($id);
 

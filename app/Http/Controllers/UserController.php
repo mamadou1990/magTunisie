@@ -20,7 +20,7 @@ class UserController extends Controller
     }
 
 
-    public function Users()
+    public function users()
     {
         return $this->repository->getAllUsers();
 
@@ -34,7 +34,7 @@ class UserController extends Controller
     }
 
 
-    public function User($id)
+    public function user($id)
     {
         return $this->repository->getUser($id);
 
