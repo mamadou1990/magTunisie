@@ -10,5 +10,16 @@ use Prettus\Repository\Contracts\RepositoryInterface;
  */
 interface SectionRepository extends RepositoryInterface
 {
-    //
+    public function getAllSections();
+    public function addSections($Section);
+    public function getSection($id);
+    public function updateSections($Section, $Section_id);
+    public function deleteSections($ids);
+    public function getSectionsWithCategories();
+
+
+
+
+
+
 }

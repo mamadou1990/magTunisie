@@ -30,4 +30,54 @@ class CategorieRepositoryEloquent extends BaseRepository implements CategorieRep
     {
         $this->pushCriteria( app(RequestCriteria::class) );
     }
+
+    public function getCategories()
+    {
+        $categories = $this->repository->all();
+
+        return $categories;
+
+    }
+
+
+
+    public function addCategorie($Categorie)
+    {
+        $this->repository->create($Categorie);
+    }
+
+
+    public function getCategorie($cat_id)
+    {
+        $Categorie = $this->repository->findByField('id',$cat_id);
+
+        return $Categorie;
+
+    }
+
+    public function updateCategories($Categorie, $id)
+    {
+         $this->repository->update( $Categorie, $id );
+
+    }
+
+    public function deleteCategories($ids){
+        foreach ($ids as $id) {
+            $this->repository->delete($id);
+    }}
+
+
+    public function getCategoriesWithArticles()
+    {
+        $Categories = App\Categorie::with('Article')->get();
+        return $Categories;
+    }
+
+    public function getCategoriesBySection($Sec_id){
+
+        $Categories = $this->repository->findByField('Section_id',$Sec_id);
+
+        return $Categories;
+    }
+
 }

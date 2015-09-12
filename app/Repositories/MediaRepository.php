@@ -10,5 +10,16 @@ use Prettus\Repository\Contracts\RepositoryInterface;
  */
 interface MediaRepository extends RepositoryInterface
 {
-    //
+    public function getAllMedias();
+    public function createMedia($Media);
+    public function getMedia($id);
+    public function updateMedia($Media, $id);
+    public function deleteMedias($ids);
+
+
+
+
+
+
+
 }

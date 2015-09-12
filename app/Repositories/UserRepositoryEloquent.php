@@ -30,4 +30,34 @@ class UserRepositoryEloquent extends BaseRepository implements UserRepository
     {
         $this->pushCriteria( app(RequestCriteria::class) );
     }
+
+    public function getAllUsers()
+    {
+        $users = $this->repository->all();
+
+        return $users;
+    }
+
+    public function addUser($User)
+    {
+        $this->repository->create($User);
+    }
+
+    public function getUser($id)
+    {
+        $User = $this->repository->findByField('User_id',$id);
+
+        return $User;
+    }
+
+    public function updateUser($User, $User_id)
+    {
+         $this->repository->update($User, $User_id );
+
+    }
+
+    public function deleteUsers($ids){
+        foreach ($ids as $id) {
+            $this->repository->delete($id);
+        }}
 }

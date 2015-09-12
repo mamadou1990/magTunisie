@@ -30,4 +30,44 @@ class SectionRepositoryEloquent extends BaseRepository implements SectionReposit
     {
         $this->pushCriteria( app(RequestCriteria::class) );
     }
+
+    public function getAllSections()
+    {
+        $sections = $this->repository->all();
+
+        return $sections;
+
+    }
+
+    public function addSections($Section)
+    {
+         $this->repository->create($Section);
+    }
+
+    public function getSection($id)
+    {
+        $Section = $this->repository->findByField('Section_id', $id);
+
+        return $Section;
+    }
+
+    public function updateSections($Section, $Section_id)
+    {
+        $this->repository->update($Section, $Section_id);
+
+    }
+
+    public function deleteSections($ids)
+    {
+        foreach ($ids as $id) {
+            $this->repository->delete($id);
+    }}
+
+        public function getSectionsWithCategories()
+    {
+        $Sections = Section::with('Categorie')->get();
+        return $Sections;
+
+    }
+
 }

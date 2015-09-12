@@ -10,5 +10,14 @@ use Prettus\Repository\Contracts\RepositoryInterface;
  */
 interface UserRepository extends RepositoryInterface
 {
-    //
+    public function getAllUsers();
+    public function addUser($User);
+    public function getUser($id);
+    public function updateUser($User, $User_id);
+    public function deleteUsers($ids);
+
+
+
+
+
 }
