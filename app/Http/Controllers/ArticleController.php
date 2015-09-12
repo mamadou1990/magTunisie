@@ -13,90 +13,66 @@ class ArticleController extends Controller
 {
 
     /**
-     * @var PostRepository
-     */
+* @var PostRepository
+*/
     protected $repository;
 
     public function __construct(ArticleRepository $repository){
         $this->repository = $repository;
+
     }
 
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
-    public function index()
+
+    public function articles()
     {
-        $articles = $this->repository->all();
+        return $this->repository->getAllArticles();
+    }
+
+
+
+    public function createArticle($Article)
+    {
+        $this->repository->createArticle($Article);
+    }
+
+
+
+
+    public function article($id)
+    {
+        return $this->repository->getArticle($id);
+    }
+
+
+
+
+    public function updateArticles($Article, $id)
+{
+        $this->repository->Updatearticles($Article, $id);
+}
+
+
+
+    public function deleteArticle($id)
+    {
+        $this->repository->deleteArticle($id);
+    }
+
+
+
+    public function getActiclesByCategorie($cat_id)
+    {
+        return $this->repository->getActicleByCategorie($cat_id);
+    }
+
+
+    public function getActiclesBySection($sec_id)
+    {
+       return $this->repository->getActiclesBySection($sec_id);
 
         return $articles;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  Request  $request
-     * @return Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  Request  $request
-     * @param  int  $id
-     * @return Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
