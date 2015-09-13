@@ -31,9 +31,9 @@ class CategorieRepositoryEloquent extends BaseRepository implements CategorieRep
         $this->pushCriteria( app(RequestCriteria::class) );
     }
 
-    public function getCategories()
+    public function getAllCategories()
     {
-        $categories = $this->repository->all();
+        $categories = $this->all();
 
         return $categories;
 

@@ -17,23 +17,19 @@ class ArticleController extends Controller
 */
     protected $repository;
 
+
     public function __construct(ArticleRepository $repository){
         $this->repository = $repository;
 
     }
 
 
-
     public function articles()
     {
-        //return $this->repository->getAllArticles();
-        return 'test';
+        return $this->repository->getAllArticles();
+
     }
-    public function test()
-    {
-        //return $this->repository->getAllArticles();
-        return 'test';
-    }
+
 
 
     public function createArticle($Article)

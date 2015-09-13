@@ -21,3 +21,22 @@ Route::get('/', function () {
 Route::get('article', [
     'as' => 'article', 'uses' => 'ArticleController@articles'
 ]);
+
+
+
+Route::get('categorie', [
+    'as' => 'categorie', 'uses' => 'CategorieController@categories'
+]);
+
+
+Route::get('sections', [
+    'as' => 'sections', 'uses' => 'SectionController@sections'
+]);
+
+Route::get('media', [
+    'as' => 'media', 'uses' => 'MediaController@medias'
+]);
+
+Route::post('article', [
+    'as' => 'addArticle', 'uses' => 'MediaController@addArticles'
+]);

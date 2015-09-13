@@ -12,10 +12,14 @@ use App\Http\Controllers\Controller;
 
 class SectionController extends Controller
 {
+    /**
+     * Interface ArticleRepository
+     * @package namespace App\Repositories;
+     */
     public function __construct(SectionRepository $repository){
-        $this->repository = $repository;
+    $this->repository = $repository;
 
-    }
+}
 
 
     public function sections()

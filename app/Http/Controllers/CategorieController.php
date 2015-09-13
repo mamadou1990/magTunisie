@@ -8,24 +8,24 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Repositories\CategorieRepository;
 
-class CategorieControler extends Controller
+class CategorieController extends Controller
 {
     protected $repository;
 
     public function __construct(CategorieRepository $repository){
-        $this->repository = $repository;
-    }
+      $this->repository = $repository;
+}
 
 
-    public function categories()
-    {
-        return $this->repository->getAllCategories();
-    }
+public function categories()
+{
+    return $this->repository->getAllCategories();
+}
 
 
 
 
-    public function createCategorie($Categorie)
+public function createCategorie($Categorie)
     {
         $this->repository->addCategorie($Categorie);
     }
@@ -47,7 +47,7 @@ class CategorieControler extends Controller
 
     public function updateCategories($Categorie, $id)
     {
-       $this->repository->updateCategories($Categorie, $id);
+        $this->repository->updateCategories($Categorie, $id);
 
     }
 
@@ -56,14 +56,14 @@ class CategorieControler extends Controller
 
 
     public function deleteCategorie($ids){
-            $this->repository->deleteCategories($ids);
+        $this->repository->deleteCategories($ids);
     }
 
 
 
-        public function getCategoriesWithArticles()
+    public function getCategoriesWithArticles()
     {
-       return $this->repository->getCategoriesWithArticles();
+        return $this->repository->getCategoriesWithArticles();
 
     }
 

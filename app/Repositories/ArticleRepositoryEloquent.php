@@ -20,12 +20,7 @@ class ArticleRepositoryEloquent extends BaseRepository implements ArticleReposit
      *
      * @return string
      */
-    protected $repository;
 
-    public function __construct(ArticleRepository $repository)
-    {
-        $this->repository = $repository;
-    }
     public function model()
     {
         return Article::class;
@@ -41,7 +36,7 @@ class ArticleRepositoryEloquent extends BaseRepository implements ArticleReposit
 
     public function getAllArticles()
 {
-    $articles = $this->$repository->all();
+    $articles = $this->all();
 
     return $articles;
 }

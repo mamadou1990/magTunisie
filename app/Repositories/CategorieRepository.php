@@ -10,7 +10,7 @@ use Prettus\Repository\Contracts\RepositoryInterface;
  */
 interface CategorieRepository extends RepositoryInterface
 {
-    public function getCategories();
+    public function getAllCategories();
     public function addCategorie($Categorie);
     public function getCategorie($cat_id);
     public function updateCategories($Categorie, $id);

@@ -33,7 +33,7 @@ class MediaRepositoryEloquent extends BaseRepository implements MediaRepository
 
     public function getAllMedias()
     {
-        $medias = $this->repository->all();
+        $medias = $this->all();
 
         return $medias;
 
