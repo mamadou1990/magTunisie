@@ -29,7 +29,7 @@ Route::get('categorie', [
 ]);
 
 
-Route::get('sections', [
+Route::get('section', [
     'as' => 'sections', 'uses' => 'SectionController@sections'
 ]);
 
@@ -39,4 +39,8 @@ Route::get('media', [
 
 Route::post('article', [
     'as' => 'addArticle', 'uses' => 'MediaController@addArticles'
+]);
+
+Route::post('section', [
+    'as' => 'addSection', 'uses' => 'SectionController@addSection'
 ]);

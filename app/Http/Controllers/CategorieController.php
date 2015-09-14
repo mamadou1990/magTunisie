@@ -25,7 +25,7 @@ public function categories()
 
 
 
-public function createCategorie($Categorie)
+public function addCategorie($Categorie)
     {
         $this->repository->addCategorie($Categorie);
     }

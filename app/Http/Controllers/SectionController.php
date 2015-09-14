@@ -31,7 +31,7 @@ class SectionController extends Controller
 
 
 
-    public function addSections($Section)
+    public function addSection($Section)
     {
          $this->repository->addSections($Section);
     }

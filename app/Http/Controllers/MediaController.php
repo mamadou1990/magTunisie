@@ -29,7 +29,7 @@ class MediaController extends Controller
     }
 
 
-    public function createMedias($Media)
+    public function addMedia($Media)
     {
         $this->repository->createMedia($Media);
     }

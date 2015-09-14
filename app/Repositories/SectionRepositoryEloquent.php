@@ -33,7 +33,7 @@ class SectionRepositoryEloquent extends BaseRepository implements SectionReposit
 
     public function getAllSections()
     {
-        $sections = $this->repository->all();
+        $sections = $this->all();
 
         return $sections;
 
@@ -41,26 +41,26 @@ class SectionRepositoryEloquent extends BaseRepository implements SectionReposit
 
     public function addSections($Section)
     {
-         $this->repository->create($Section);
+        $post = $this->create($Section);
     }
 
     public function getSection($id)
     {
-        $Section = $this->repository->findByField('Section_id', $id);
+        $Section = $this->findByField('Section_id', $id);
 
         return $Section;
     }
 
     public function updateSections($Section, $Section_id)
     {
-        $this->repository->update($Section, $Section_id);
+        $this->update($Section, $Section_id);
 
     }
 
     public function deleteSections($ids)
     {
         foreach ($ids as $id) {
-            $this->repository->delete($id);
+            $this->delete($id);
     }}
 
         public function getSectionsWithCategories()

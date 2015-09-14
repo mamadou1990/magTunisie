@@ -32,7 +32,7 @@ class ArticleController extends Controller
 
 
 
-    public function createArticle($Article)
+    public function addArticle($Article)
     {
         $this->repository->createArticle($Article);
     }
