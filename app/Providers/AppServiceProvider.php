@@ -40,5 +40,8 @@ class AppServiceProvider extends ServiceProvider
                 "App\\Repositories\\{$model}RepositoryEloquent"
             );
         }
+
+        $this->app->register('Darkaonline\L5Swagger\L5SwaggerServiceProvider');
+
     }
 }

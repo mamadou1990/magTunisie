@@ -8,28 +8,28 @@ use App\Repositories\ArticleRepository;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Swagger\Annotations as SWG;
+
+
 
 class ArticleController extends Controller
 {
 
     /**
-* @var PostRepository
-*/
+     * @var PostRepository
+     */
     protected $repository;
-
 
     public function __construct(ArticleRepository $repository){
         $this->repository = $repository;
-
     }
-
 
     public function articles()
     {
         return $this->repository->getAllArticles();
 
+        return $articles;
     }
-
 
 
     public function addArticle($Article)
@@ -39,10 +39,27 @@ class ArticleController extends Controller
 
 
 
-
-    public function article($id)
+    /**
+     *   @SWG\Get(
+     *     path="/public/article/{articleId}",
+     *     summary="Find article by ID",
+     *     @SWG\Parameter(
+     *       name="articleId",
+     *       description="ID of article that needs to be fetched",
+     *       required=true,
+     *       type="integer",
+     *       format="int64",
+     *       in ="path"
+     *     ),
+     *      @SWG\Response(
+     *     response=200,
+     *     description="A list of articles"
+     *   ),
+     * )
+     */
+    public function getArticleById($articleId)
     {
-        return $this->repository->getArticle($id);
+        return $this->repository->getArticle($articleId);
     }
 
 

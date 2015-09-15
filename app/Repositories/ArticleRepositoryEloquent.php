@@ -43,37 +43,37 @@ class ArticleRepositoryEloquent extends BaseRepository implements ArticleReposit
 
     public function createArticle($Article)
     {
-         $this->repository->create($Article);
+         $this->create($Article);
     }
 
 
     public function getArticle($id)
     {
-        $Article = $this->repository->findByField('id',$id);
+        $Article = $this->findByField('id',$id);
 
         return $Article;
     }
 
     public function updateArticles($Article, $id)
     {
-        $post = $this->repository->update( $Article, $id );
+        $post = $this->update( $Article, $id );
     }
 
     public function deleteArticle($id)
     {
-        $this->repository->delete($id);
+        $this->delete($id);
     }
 
     public function getActiclesByCategorie($cat_id)
     {
-        $articles = $this->repository->findByField('categorie_id',$cat_id);
+        $articles = $this->findByField('categorie_id',$cat_id);
 
         return $articles;
     }
 
     public function getActiclesBySection($sec_id)
     {
-        $articles = $this->repository->findByField('section_id',$sec_id);
+        $articles = $this->findByField('section_id',$sec_id);
 
         return $articles;
     }

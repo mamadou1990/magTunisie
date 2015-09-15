@@ -23,6 +23,11 @@ Route::get('article', [
 ]);
 
 
+Route::get('article/{id}', [
+    'as' => 'getArticleById', 'uses' => 'ArticleController@getArticleById'
+]);
+
+
 
 Route::get('categorie', [
     'as' => 'categorie', 'uses' => 'CategorieController@categories'
